@@ -36,6 +36,12 @@ socket.on('init', (data) => {
     camera.setAttribute('position', '0 1.6 0');
     camera.setAttribute('wasd-controls-enabled', 'false');
     player.appendChild(camera);
+    let leftHand = document.createElement('a-entity');
+    leftHand.setAttribute('oculus-touch-controls', 'hand: left');
+    player.appendChild(leftHand);
+    let rightHand = document.createElement("a-entity");
+    rightHand.setAttribute("oculus-touch-controls", "hand: right");
+    player.appendChild(rightHand);
     sceneEl.appendChild(player);
     id = data.id;
     gameData = data.gameData;
