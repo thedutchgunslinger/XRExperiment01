@@ -26,10 +26,16 @@ socket.on('init', (data) => {
     player.setAttribute('shadow', {
         cast: true
     });
+
     position = { x: 0, y: 1, z: -2 };
     player.setAttribute('position', position);
     player.setAttribute('id', data.id);
     player.setAttribute('player', 'true');
+    let camera = document.createElement('a-camera');
+    camera.setAttribute('id','camera');
+    camera.setAttribute('position', '0 1.6 0');
+    camera.setAttribute('wasd-controls-enabled', 'false');
+    player.appendChild(camera);
     sceneEl.appendChild(player);
     id = data.id;
     gameData = data.gameData;
