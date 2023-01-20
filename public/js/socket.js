@@ -38,6 +38,7 @@ socket.on('init', (data) => {
     player.appendChild(camera);
     let leftHand = document.createElement('a-entity');
     leftHand.setAttribute('oculus-touch-controls', 'hand: left');
+    leftHand.setAttribute("thumbstick-logging");
     player.appendChild(leftHand);
     let rightHand = document.createElement("a-entity");
     rightHand.setAttribute("oculus-touch-controls", "hand: right");
